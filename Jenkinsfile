@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('SCM checkout') {
             steps {
-                git 'https://github.com/kuslapur/vprofile-project.git'
+                git 'https://github.com/kuslapur/my_app.git'
             }
         }
         stage('Compile and package') {
