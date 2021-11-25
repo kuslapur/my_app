@@ -19,7 +19,7 @@ pipeline {
                 sh 'docker build . -t test'
             }
         }
-        stage('Docker run and deploy') {
+        stage('Docker deploy') {
             steps {
                 sh 'docker run -it -p 8087:8080 -d test'
             }
