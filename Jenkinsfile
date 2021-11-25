@@ -14,10 +14,5 @@ pipeline {
                 sh 'mvn package'
             }
         }
-        stage('Email') {
-            steps {
-                mail bcc: '', body: 'Hi Welcome jenkins', cc: '', from: '', replyTo: '', subject: 'Hi Jenkins', to: 'bkuslapur@gmail.com'
-            }
-        }
     }
 }
