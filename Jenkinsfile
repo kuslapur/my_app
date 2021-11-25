@@ -1,23 +1,21 @@
 pipeline {
-    agent any
+    agent any 
 
     stages {
-        stage('SCM checkout') {
-            steps {
+        stage('Check out SCM'){
+            step {
                 git 'https://github.com/kuslapur/my_app.git'
             }
         }
-        stage('Compile and package') {
-            steps {
-               sh 'mvn package'    
+        stage('Build and package'){
+            step {
+                sh 'mvn package'
             }
-        stage ('Email Notification') {
-            steps {
-               mail bcc: '', body: 'Hi Welcome jenkins', cc: '', from: '', replyTo: '', subject: 'Hi Jenkins', to: 'bkuslapur@gmail.com'   
-             }
-         }
-
+        }        
+        stage('Email notification'){
+            step {
+                mail bcc: '', body: 'Hi Welcome jenkins', cc: '', from: '', replyTo: '', subject: 'Hi Jenkins', to: 'bkuslapur@gmail.com'
+            }
         }
-      
     }
 }
