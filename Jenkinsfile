@@ -16,7 +16,7 @@ pipeline {
         }
         stage('Move to tomcat server') {
             steps {
-                ansible-playbook 'copyother.yml' 
+                sh 'ansible-playbook copyother.yml'
             }
         }
     
