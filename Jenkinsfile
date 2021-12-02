@@ -6,7 +6,7 @@ pipeline {
         stage('checkout') {
             steps {
 
-                git 'https://github.com/kuslapur/Maven_jenkinsfile_tomcat.git'
+                git 'https://github.com/kuslapur/my_app.git'
             }
         }
         stage('Build') {
@@ -16,7 +16,7 @@ pipeline {
         }
         stage('Move to tomcat server') {
             steps {
-                sh 'cp /var/lib/jenkins/workspace/Maven_jenkinsfile_tomcat /opt/apache-tomcat-9.0.54/webapps'
+                sh 'cp /var/lib/jenkins/workspace/my_app /opt/apache-tomcat-9.0.54/webapps'
             }
         }
     
