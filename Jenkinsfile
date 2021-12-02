@@ -6,7 +6,7 @@ pipeline {
         stage('checkout') {
             steps {
 
-                git 'https://github.com/kuslapur/my_app.git'
+                git 'https://github.com/kuslapur/Maven_jenkinsfile_tomcat.git'
             }
         }
         stage('Build') {
@@ -14,16 +14,12 @@ pipeline {
                 sh 'mvn package'
             }
         }
-        stage('Docker build') {
+        stage('Move to tomcat server') {
             steps {
-                sh 'docker build . -t test'
+                sh 'cp /var/lib/jenkins/workspace/Maven_jenkinsfile_tomcat /opt/apache-tomcat-9.0.54/webapps'
             }
         }
-        stage('Docker deploy') {
-            steps {
-                sh 'docker run -it -p 8087:8080 -d test'
-            }
-        }
+    
     }
 }
 
