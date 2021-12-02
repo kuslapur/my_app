@@ -16,7 +16,7 @@ pipeline {
         }
         stage('Move to tomcat server') {
             steps {
-                sh 'cp /var/lib/jenkins/workspace/maven+tomcat+git/target/myweb-0.0.5.war /opt/apache-tomcat-9.0.54/webapps'
+                ansible-playbook copyother.yml 
             }
         }
     
