@@ -5,6 +5,7 @@
   tasks:
     - name: slave
       copy:
-        src: /var/lib/jenkins/workspace/maven+tomcat+git/myweb-0.0.5.war
+        src: /var/lib/jenkins/workspace/maven+tomcat+git/target/myweb-0.0.5.war
         dest: /opt/apache-tomcat-9.0.55/webapps
+
 
