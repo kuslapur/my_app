@@ -1,5 +1,6 @@
 ---
 - hosts: host1
+  become: yes
   name: copy file from one slave to other slave
   tasks:
     - name: slave
