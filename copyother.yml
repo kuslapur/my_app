@@ -1,0 +1,10 @@
+---
+- hosts: host1
+  become: yes
+  name: copy file from one slave to other slave
+  tasks:
+    - name: slave
+      copy:
+        src: /var/lib/jenkins/workspace/maven+tomcat+git/myweb-0.0.5.war
+        dest: /opt/apache-tomcat-9.0.55/webapps
+
