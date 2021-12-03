@@ -3,7 +3,7 @@ pipeline {
     agent any
 
      stages {
-        stage('checkout') {
+        stage('checkout##') {
             steps {
 
                 git 'https://github.com/kuslapur/my_app.git'
