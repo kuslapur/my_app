@@ -16,7 +16,7 @@ pipeline {
         }
         stage('Move to tomcat server') {
             steps {
-                ansiblePlaybook credentialsId: 'ec2-user', disableHostKeyChecking: true, installation: 'ansible', inventory: 'dev.inv', playbook: 'copyother.yml'
+                ansiblePlaybook credentialsId: 'ubuntu', disableHostKeyChecking: true, installation: 'ansible', inventory: 'dev.inv', playbook: 'copyother.yml'
             }
         }
     
