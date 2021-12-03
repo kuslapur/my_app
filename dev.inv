@@ -1,0 +1,2 @@
+[tomcat]
+65.0.132.244 ansible_user=ec2-user
